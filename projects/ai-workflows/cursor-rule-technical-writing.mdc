@@ -1,0 +1,41 @@
+---
+description: Guardrails for editing technical documentation
+globs: ["**/*.md", "**/*.dita", "**/*.ditamap"]
+alwaysApply: false
+---
+
+# Technical documentation edits
+
+Follow these rules whenever editing documentation files.
+
+## Accuracy
+
+- Do not invent product behavior, UI labels, menu paths, limits, permissions, commands, or error messages.
+- If the source does not say it, do not write it. Add a question for the subject-matter expert instead.
+- Do not change a command, value, version number, or warning while editing for style.
+
+## Structure
+
+- Keep one level-one heading per file. Do not skip heading levels.
+- Keep sentence-style capitalization. Task headings start with a verb.
+- Preserve front matter, conditional markup, keys, and `keyref` attributes.
+- Put prerequisites before steps, and the expected result after them.
+- One action per numbered step.
+
+## Style
+
+- Use active voice and short sentences.
+- Do not use long dashes or semicolons. Use a period, comma, or colon.
+- Do not use filler such as "seamless", "robust", or "leverage".
+- Write for the audience named in the file. Do not address the reader in end-user manuals.
+
+## Scope
+
+- Edit only what the request names. Do not reformat or rename unrelated files.
+- Do not rename or delete files, or change navigation, unless asked.
+
+## After every edit
+
+1. Summarize which files changed and why.
+2. List remaining open questions for the SME.
+3. Check the changed files against the style checklist and report any item that fails.

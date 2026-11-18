@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE task PUBLIC "-//OASIS//DTD DITA Task//EN" "task.dtd">
+<task id="check-rollout" xml:lang="en-US">
+  <title>Check a deployment rollout</title>
+  <shortdesc>Wait up to two minutes for deployment progress.</shortdesc>
+  <taskbody>
+    <prereq>
+      <p>Confirm the cluster context with the release owner.
+      The sample requires the nginx deployment in the default
+      namespace and permission to get and watch deployments.</p>
+    </prereq>
+    <context>
+      <p>This task reads <keyword keyref="platform"/> status.
+      It does not change the deployment.</p>
+    </context>
+    <steps>
+      <step>
+        <cmd>Check the active context.</cmd>
+        <info><codeblock>kubectl config current-context</codeblock>
+        <p>Stop if the context differs from the release record.</p></info>
+      </step>
+      <step>
+        <cmd>Check the rollout.</cmd>
+        <info><codeblock>
+kubectl rollout status deployment/nginx --namespace=default --timeout=120s
+        </codeblock></info>
+        <stepresult><p>On success, kubectl reports that the
+        deployment successfully rolled out.</p></stepresult>
+      </step>
+    </steps>
+    <result>
+      <p>Record the context, namespace, command, output, and time.
+      A timeout requires investigation and does not reverse changes.</p>
+    </result>
+    <postreq><p>Run the approved application smoke test after
+    a successful rollout. Escalate a failure to the release owner.</p></postreq>
+  </taskbody>
+</task>

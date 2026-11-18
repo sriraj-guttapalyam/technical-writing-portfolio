@@ -1,0 +1,39 @@
+---
+description: Guardrails for editing MadCap Flare topics, snippets, and TOCs
+globs: ["Content/**/*.htm", "Content/**/*.html", "Content/**/*.flsnp", "Project/**/*.fltoc", "Project/**/*.flvar"]
+alwaysApply: false
+---
+
+# MadCap Flare documentation rules
+
+Follow these rules whenever creating or editing MadCap Flare files.
+
+## Protect Flare files and markup
+
+- Analyze before editing. Do not make broad project-wide changes unless explicitly requested.
+- Preserve all `MadCap:` elements and attributes: `MadCap:conditions`, `MadCap:snippetBlock`, `MadCap:snippetText`, `MadCap:xref`, `MadCap:variable`, `MadCap:keyword`, `MadCap:dropDown`, `MadCap:expanding`, and `MadCap:concept`.
+- Keep valid XHTML syntax. Close all tags, quote all attributes, and preserve the `xmlns:MadCap` namespace declaration on the `<html>` element.
+- Do not modify `Output/`, `Analyzer/`, or `_rels/`.
+- Do not rename or delete files, and do not edit `.fltoc`, `.fltar`, `.flvar`, or `.flcts` files unless requested.
+
+## Ground every fact in verified sources
+
+- Use only the supplied Jira issues, Confluence specs, Teams transcripts, SME emails, demo video notes, and QA environment observations.
+- Do not invent product behavior, UI labels, menu paths, limits, permissions, or error messages.
+- When sources conflict, prefer the verified QA environment for UI labels and log an SME question for behavior or limits.
+- Place every unresolved question in an SME questions list at the end of the response.
+
+## Voice, headings, and procedures
+
+- Write for end users, operators, and administrators, not internal engineering teams.
+- Do not use second-person pronouns (`you` or `your`) in end-user or administrator manuals. Name the role (`the operator`, `the administrator`, `EHS personnel`) or use system-focused wording (`enabling`, `allowing`, `providing`).
+- Do not use em dashes, en dashes, or semicolons in topic text. Use a period, comma, colon, or hyphen.
+- Use sentence-style capitalization for headings. Start task headings with a verb.
+- Keep one action per numbered step. Use **select** instead of **click**. Format navigation paths as **Settings** > **Users** > **Add user**.
+- For screen figures, place `p.figure-caption` after the image. Store topic images in `Content/Resources/Images/` with descriptive filenames.
+
+## After every edit
+
+1. Summarize which Flare files changed and why.
+2. List remaining SME questions grouped by source gap or conflict.
+3. Verify that all `MadCap:` tags and XHTML tags close cleanly.

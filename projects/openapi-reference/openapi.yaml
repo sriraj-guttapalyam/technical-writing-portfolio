@@ -1,0 +1,171 @@
+openapi: 3.0.3
+info:
+  title: Repository issues (documentation sample)
+  version: "2022-11-28"
+  description: |
+    A documentation sample that describes one read-only endpoint of the
+    GitHub REST API. It is a subset written for this portfolio and is not
+    GitHub's official specification. The authoritative definition is in the
+    GitHub REST API documentation.
+servers:
+  - url: https://api.github.com
+paths:
+  /repos/{owner}/{repo}/issues:
+    get:
+      operationId: listRepositoryIssues
+      summary: List repository issues
+      description: |
+        Returns issues for a repository. The response can also include pull
+        requests. A record that has a `pull_request` property is a pull
+        request. This operation does not create or change issues.
+      tags: [Issues]
+      security:
+        - {}
+        - bearerAuth: []
+      parameters:
+        - $ref: "#/components/parameters/Owner"
+        - $ref: "#/components/parameters/Repo"
+        - name: state
+          in: query
+          description: Which issues to return.
+          schema:
+            type: string
+            enum: [open, closed, all]
+            default: open
+        - name: labels
+          in: query
+          description: Comma-separated label names. An issue must have all of them.
+          schema:
+            type: string
+          example: "help wanted,bug"
+        - name: sort
+          in: query
+          schema:
+            type: string
+            enum: [created, updated, comments]
+            default: created
+        - name: direction
+          in: query
+          schema:
+            type: string
+            enum: [asc, desc]
+            default: desc
+        - name: since
+          in: query
+          description: Only issues updated after this UTC time.
+          schema:
+            type: string
+            format: date-time
+          example: "2026-09-01T00:00:00Z"
+        - name: per_page
+          in: query
+          description: Results per page. Maximum 100.
+          schema:
+            type: integer
+            minimum: 1
+            maximum: 100
+            default: 30
+        - name: page
+          in: query
+          schema:
+            type: integer
+            minimum: 1
+            default: 1
+      responses:
+        "200":
+          description: A page of issues. An empty array is a valid result.
+          headers:
+            Link:
+              description: |
+                Pagination links. Request the URL marked rel="next" until
+                it is absent.
+              schema:
+                type: string
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "#/components/schemas/Issue"
+        "301":
+          description: The repository moved. Follow the new location and update stored details.
+        "404":
+          description: |
+            The repository does not exist, or the caller cannot see it.
+            A private repository can appear not to exist to an unauthorized client.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+        "422":
+          description: A parameter name or value was not valid.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Error"
+components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      description: A fine-grained token with read access to Issues. Not needed for public repositories.
+  parameters:
+    Owner:
+      name: owner
+      in: path
+      required: true
+      description: Account or organization name.
+      schema:
+        type: string
+      example: github
+    Repo:
+      name: repo
+      in: path
+      required: true
+      description: Repository name without `.git`.
+      schema:
+        type: string
+      example: docs
+  schemas:
+    Issue:
+      type: object
+      required: [number, id, title, state, html_url, updated_at, labels]
+      properties:
+        number:
+          type: integer
+          description: Issue number within the repository. Not the same as `id`.
+        id:
+          type: integer
+          description: API identifier.
+        title:
+          type: string
+        state:
+          type: string
+        html_url:
+          type: string
+          format: uri
+        updated_at:
+          type: string
+          format: date-time
+        labels:
+          type: array
+          description: Can be empty.
+          items:
+            type: object
+            properties:
+              name:
+                type: string
+        body:
+          type: string
+          nullable: true
+          description: Markdown description. Can be null.
+        pull_request:
+          type: object
+          description: Present only when the record is a pull request.
+    Error:
+      type: object
+      properties:
+        message:
+          type: string
+        documentation_url:
+          type: string

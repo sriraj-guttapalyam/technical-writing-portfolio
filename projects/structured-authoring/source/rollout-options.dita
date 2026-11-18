@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE reference PUBLIC "-//OASIS//DTD DITA Reference//EN" "reference.dtd">
+<reference id="rollout-options" xml:lang="en-US">
+  <title>Rollout check options</title>
+  <shortdesc>Options used in the rollout procedure.</shortdesc>
+  <refbody>
+    <section>
+      <title>Command behavior</title>
+      <dl>
+        <dlentry><dt>--namespace=default</dt>
+          <dd>Targets the sample deployment's namespace.</dd></dlentry>
+        <dlentry><dt>--timeout=120s</dt>
+          <dd>Stops waiting after two minutes. It does not roll back.</dd></dlentry>
+        <dlentry><dt>--revision=3</dt>
+          <dd>Watches revision 3 instead of following the latest rollout.
+          Use only if the release record identifies revision 3.</dd></dlentry>
+      </dl>
+    </section>
+  </refbody>
+</reference>

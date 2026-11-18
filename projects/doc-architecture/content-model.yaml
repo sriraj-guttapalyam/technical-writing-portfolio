@@ -1,0 +1,30 @@
+# Content model for the fictional Sensor Hub documentation set.
+topic_types:
+  concept:
+    answers: What is it and why does it matter?
+    required_sections: [definition, relationship_to_related_ideas]
+    forbidden: [numbered_steps]
+    max_words: 400
+  task:
+    answers: How do I do this?
+    required_sections: [purpose, steps, expected_result]
+    optional_sections: [prerequisites, troubleshooting_link]
+    rules:
+      - One action per step.
+      - Heading starts with a verb.
+      - Warnings appear before the step they guard.
+  reference:
+    answers: What are the exact values?
+    required_sections: [table_or_list]
+    forbidden: [procedures]
+  troubleshooting:
+    answers: What went wrong and what do I check?
+    required_sections: [symptom, likely_cause, next_check]
+    rules:
+      - Separate evidence from diagnosis.
+      - State escalation criteria.
+  release_note:
+    answers: What changed for me?
+    required_sections: [change, reader_impact]
+    optional_sections: [action_needed]
+    forbidden: [internal_ticket_ids]

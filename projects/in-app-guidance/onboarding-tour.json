@@ -1,0 +1,109 @@
+{
+  "schemaVersion": "1.0",
+  "product": "Sensor Hub Administration Console",
+  "guides": [
+    {
+      "guideId": "admin-mfa-policy-onboarding-v2",
+      "type": "walkthrough",
+      "releaseFlag": "conditional_mfa_v2",
+      "targeting": {
+        "requiredRole": "organization_administrator",
+        "urlRoute": "/settings/security",
+        "conditions": [
+          { "property": "mfa_policy_count", "operator": "equals", "value": 0 },
+          { "property": "account_age_days", "operator": "less_than_or_equal", "value": 30 }
+        ],
+        "cooldownHoursAfterSnooze": 72,
+        "maxImpressions": 2
+      },
+      "telemetry": {
+        "impressionEvent": "guide_viewed",
+        "stepAdvanceEvent": "guide_step_completed",
+        "completionEvent": "guide_completed",
+        "dismissEvent": "guide_dismissed",
+        "docsClickEvent": "guide_docs_opened"
+      },
+      "steps": [
+        {
+          "stepId": "open-create-policy",
+          "stepNumber": 1,
+          "selector": "[data-tour-id='security-create-mfa-policy']",
+          "placement": "bottom",
+          "advanceOn": "click",
+          "dismissible": true,
+          "title": "Require MFA for privileged roles",
+          "body": "Create a conditional MFA policy so organization and site administrators verify identity at sign-in.",
+          "primaryCta": "Next",
+          "secondaryCta": "Snooze for 3 days",
+          "docsPath": "/docs/security/configure-conditional-mfa#before-you-begin"
+        },
+        {
+          "stepId": "select-target-roles",
+          "stepNumber": 2,
+          "selector": "[data-tour-id='mfa-role-scope-picker']",
+          "placement": "right",
+          "advanceOn": "button",
+          "dismissible": true,
+          "title": "Scope the policy to admin roles first",
+          "body": "Start with Organization administrator and Integration developer to protect API keys without disrupting read-only auditors.",
+          "primaryCta": "Next",
+          "secondaryCta": "Dismiss",
+          "docsPath": "/docs/security/configure-conditional-mfa#scope-by-role"
+        },
+        {
+          "stepId": "choose-authenticator-factors",
+          "stepNumber": 3,
+          "selector": "[data-tour-id='mfa-factor-checkboxes']",
+          "placement": "right",
+          "advanceOn": "button",
+          "dismissible": true,
+          "title": "Allow phishing-resistant factors",
+          "body": "Enable WebAuthn passkeys and authenticator apps. Keep recovery codes restricted to verified help-desk resets.",
+          "primaryCta": "Next",
+          "secondaryCta": "Dismiss",
+          "docsPath": "/docs/security/configure-conditional-mfa#supported-factors"
+        },
+        {
+          "stepId": "set-grace-period-and-activate",
+          "stepNumber": 4,
+          "selector": "[data-tour-id='mfa-enforcement-save']",
+          "placement": "top",
+          "advanceOn": "button",
+          "dismissible": true,
+          "title": "Set an enrollment window and activate",
+          "body": "A 7-day enrollment period lets current administrators register a factor before strict sign-in enforcement begins.",
+          "primaryCta": "Done",
+          "secondaryCta": "Open full guide",
+          "docsPath": "/docs/security/configure-conditional-mfa#verify-enforcement-in-audit-log"
+        }
+      ]
+    },
+    {
+      "guideId": "release-2-4-scoped-api-keys-banner",
+      "type": "banner",
+      "releaseFlag": "site_scoped_api_keys_2_4",
+      "targeting": {
+        "requiredRole": "integration_developer",
+        "urlRoute": "/settings/api-credentials",
+        "conditions": [
+          { "property": "unscoped_key_count", "operator": "greater_than", "value": 0 }
+        ],
+        "cooldownHoursAfterSnooze": 168,
+        "maxImpressions": 1
+      },
+      "telemetry": {
+        "impressionEvent": "banner_viewed",
+        "completionEvent": "banner_cta_clicked",
+        "dismissEvent": "banner_dismissed",
+        "docsClickEvent": "banner_release_notes_opened"
+      },
+      "announcement": {
+        "dismissible": true,
+        "title": "New in 2.4: Restrict API keys to specific sites",
+        "body": "Replace organization-wide tokens with site-scoped keys without rotating active webhook secrets.",
+        "primaryCta": "Review migration steps",
+        "docsPath": "/docs/releases/2-4#site-scoped-api-keys"
+      }
+    }
+  ]
+}

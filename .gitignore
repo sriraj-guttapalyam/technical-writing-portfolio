@@ -1,0 +1,20 @@
+__pycache__/
+*.pyc
+tmp/
+
+_private/
+node_modules/
+website/node_modules/
+website/build/
+website/.docusaurus/
+website/.cache-loader/
+*.zip
+.DS_Store
+
+# Excluded scratch datasets and self-study workbooks
+projects/dogbench/
+projects/ai-documentation-mastery/
+projects/ai-ready-llms-txt-tutorial/
+projects/developer-documentation-masterclass/
+projects/markdown-for-technical-writers/
+projects/build_pdf.py
