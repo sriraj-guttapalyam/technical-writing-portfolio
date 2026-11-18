@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE map PUBLIC "-//OASIS//DTD DITA Map//EN" "map.dtd">
+<map id="rollout-guide" xml:lang="en-US">
+  <title>Deployment rollout checks</title>
+  <keydef keys="platform">
+    <topicmeta>
+      <keywords><keyword>Kubernetes</keyword></keywords>
+    </topicmeta>
+  </keydef>
+  <topicref href="rollout-concept.dita"/>
+  <topicref href="check-rollout.dita"/>
+  <topicref href="rollout-options.dita"/>
+</map>

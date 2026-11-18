@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src data: blob:; connect-src 'none'; object-src 'none'; base-uri 'none'">
+<title>Local Callout Studio</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header><div><span class="eyebrow">OFFLINE · NO AI CALLS</span><h1>Callout Studio</h1></div><div class="top-actions"><button id="openImage">Open image / SNAGX</button><button id="loadProject">Open saved project</button><button id="saveProject">Save project</button></div></header>
+<main>
+<aside>
+<section><h2>1. Choose a layout</h2><button id="sample">Load demo screen</button><button id="demoPreset">Apply 8-callout demo preset</button><div class="row"><button id="loadPreset">Load preset</button><button id="savePreset">Save preset</button></div><p class="hint">Presets reuse positions on screenshots with the same layout. Different layouts need new target positions.</p></section>
+<section><h2>2. Add or adjust</h2><div class="row modes"><button id="moveMode" aria-pressed="true">Move</button><button id="pointMode" aria-pressed="false">Add callout</button><button id="boxMode" aria-pressed="false">Outline</button></div><p id="instruction" class="hint">Drag a number or its endpoint. Click a number to select it.</p><div class="row"><button id="undo">Undo</button><button id="remove">Remove selected</button></div><label>Selected label<input id="label" placeholder="Select a callout" disabled maxlength="200"></label><div id="callouts" class="callouts" aria-label="Callout list"></div></section>
+<section><h2>3. Style</h2><div class="row"><label>Green<input id="color" type="color" value="#6CB238"></label><label>Circle size<input id="diameter" type="number" min="20" max="80" step="2" value="40"></label></div><div class="row"><label>Line width<input id="lineWidth" type="number" min="1" max="12" value="6"></label><label>Canvas margin<input id="margin" type="number" min="40" max="240" value="80"></label></div></section>
+<section><h2>4. Export</h2><label>PNG size<select id="scale"><option value="1">Original pixels (1×)</option><option value="2">Larger callouts (2×; screenshot enlarged)</option></select></label><div class="row"><button id="png" class="primary">Save PNG</button><button id="svg">Save SVG</button></div><button id="batch">Batch: same layout → PNG ZIP</button><p class="hint">SVG keeps vector callouts. PNG is flattened. Save a project to continue editing here.</p></section>
+</aside>
+<div class="workspace"><div class="workspace-bar"><span id="fileInfo"></span><span id="count"></span></div><div id="stage" aria-label="Image annotation canvas"></div><div id="status" role="status" aria-live="polite">Ready</div></div>
+</main>
+<input id="imageFile" type="file" accept=".png,.jpg,.jpeg,.webp,.snagx" hidden>
+<input id="projectFile" type="file" accept=".json" hidden>
+<input id="presetFile" type="file" accept=".json" hidden>
+<input id="batchFiles" type="file" accept=".png,.jpg,.jpeg,.webp,.snagx" multiple hidden>
+<script src="engine.js"></script><script src="sample.js"></script><script src="app.js"></script>
+</body>
+</html>

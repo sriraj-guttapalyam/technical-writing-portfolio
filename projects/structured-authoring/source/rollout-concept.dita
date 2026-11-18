@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE concept PUBLIC "-//OASIS//DTD DITA Concept//EN" "concept.dtd">
+<concept id="rollout-concept" xml:lang="en-US">
+  <title>What a rollout check establishes</title>
+  <shortdesc>A rollout check reports deployment progress.</shortdesc>
+  <conbody>
+    <p>In <keyword keyref="platform"/>, deployment completion
+    does not establish that an application passes its business tests.</p>
+    <p>Check the rollout first, then run the service's approved
+    smoke test. Do not treat a timeout as authorization to roll back.</p>
+  </conbody>
+</concept>

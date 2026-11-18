@@ -1,0 +1,31 @@
+# Controlled vocabulary for the fictional Sensor Hub documentation set.
+product_area:
+  - sensors
+  - alerts
+  - sites
+  - users-and-access
+  - api
+  - webhooks
+audience:
+  - operator
+  - administrator
+  - developer
+  - support-engineer
+task_type:
+  - get-started
+  - configure
+  - monitor
+  - troubleshoot
+  - integrate
+  - reference
+# Map the words readers use to the official term. Search expands the left side.
+synonyms:
+  offline: no data
+  dead sensor: no data
+  silent: no data
+  permission: role
+  access level: role
+  hook: webhook
+  callback: webhook
+  rate limit: quota
+  throttling: quota

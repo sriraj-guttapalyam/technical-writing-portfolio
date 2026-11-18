@@ -1,0 +1,29 @@
+# Sriraj Guttapalyam: technical writing portfolio
+
+> Senior technical writer with ten years of experience in structured authoring, API documentation, and AI-ready content. The samples use public or fictional products.
+
+## Start here
+- [README](README.md): overview, samples, experience
+- [Review map](PORTFOLIO_CONTENT_GUIDE.md): where each skill shows and how the samples are checked
+
+## AI and content strategy
+- [AI-ready content](projects/ai-ready-content/README.md): chunking, metadata, and a hand-run retrieval test
+- [AI workflows](projects/ai-workflows/README.md): human-in-the-loop process, prompts, agent rules, style checklist
+- [Cursor + MadCap Flare workflow](projects/cursor-flare-workflow/README.md): multi-source synthesis from Jira, Confluence, Teams, email, video, and QA into Flare XHTML
+- [Information architecture](projects/doc-architecture/README.md): content model, taxonomy, reuse, governance
+
+## Developer documentation
+- [API reference](projects/api-reference/README.md)
+- [OpenAPI description](projects/openapi-reference/README.md)
+- [Webhook integration](projects/webhook-integration/README.md)
+- [gRPC architecture](projects/grpc-architecture/README.md)
+- [Docs as code](projects/docs-as-code/README.md)
+
+## Procedures, in-app UX, and release communication
+- [In-app guidance](projects/in-app-guidance/README.md): role-targeted onboarding tour, release banner, JSON spec, and guide analytics
+- [RBAC administration](projects/rbac-administration/README.md)
+- [Cloud operations](projects/cloud-user-guide/README.md)
+- [Structured authoring](projects/structured-authoring/README.md)
+- [Hardware setup](projects/hardware-installation/README.md)
+- [Release documentation](projects/release-documentation/README.md)
+- [Release notes](projects/release-notes/README.md)

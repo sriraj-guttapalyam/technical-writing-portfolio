@@ -1,0 +1,53 @@
+# Metadata schema for procedural topics.
+# Each field exists because a search filter, a retrieval pipeline, or a
+# review process uses it. Fields nobody uses are not here.
+fields:
+  title:
+    type: string
+    required: true
+    note: Action-oriented for tasks. Names the subject, not just the verb.
+  type:
+    type: enum
+    required: true
+    values: [concept, task, reference, troubleshooting, release-note]
+    note: Matches the DITA topic type where the source is DITA.
+  product:
+    type: string
+    required: true
+    note: Official product name. Lets a system filter before it ranks.
+  audience:
+    type: list
+    required: true
+    values: [operator, developer, administrator, support-engineer]
+  version:
+    type: string
+    required: true
+    note: Version or range the content applies to. Stale answers cause harm.
+  summary:
+    type: string
+    required: true
+    max_length: 200
+    note: One sentence that stands alone. Used as the search snippet.
+  questions:
+    type: list
+    required: false
+    note: Plain questions this topic answers. Bridges wording gaps that keyword search misses.
+  synonyms:
+    type: list
+    required: false
+    note: Terms readers use that the page does not, such as "rollback" for "undo".
+  prerequisites:
+    type: list
+    required: false
+  related:
+    type: list
+    required: false
+    note: Paths of topics to read next. Do not rely on "see above".
+  last_reviewed:
+    type: date
+    required: true
+    note: ISO 8601. Drives stale-content reports.
+  reviewer_role:
+    type: string
+    required: false
+    note: Role that verified the steps, such as release owner.
