@@ -26,19 +26,20 @@ The [API reference sample](../api-reference/README.md) explains one endpoint for
 
 ## Validate and preview it
 
-The repository check parses the file, confirms each `$ref` resolves, and confirms that every path parameter in the URL is declared. Run it from the repository root:
+The repository check confirms that this README's local links and code fences are valid. It does not parse or lint `openapi.yaml`. Run the repository check from the repository root:
 
 ```text
 python tools/check_portfolio.py
 ```
 
-To render the file as a reference page, use any OpenAPI viewer. For example, with Node.js installed:
+To parse, lint, and render the OpenAPI file, use a dedicated OpenAPI tool. For example, with Node.js installed:
 
 ```text
+npx @redocly/cli lint projects/openapi-reference/openapi.yaml
 npx @redocly/cli preview-docs projects/openapi-reference/openapi.yaml
 ```
 
-The Redocly command downloads a tool and is not part of the repository check. A full OpenAPI lint would also be a sensible next step.
+These Redocly commands download a tool and are not part of the repository check or CI workflow. A production repository should pin a reviewed tool version and run the linter in CI.
 
 ## References
 

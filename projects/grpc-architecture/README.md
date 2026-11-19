@@ -3,18 +3,21 @@
 This concept document explains the architecture of the fictitious **Sensor Hub Event Stream**, which uses an event-driven Pub/Sub model over gRPC and Protocol Buffers (Protobufs).
 
 **Audience:** Software engineers and integration developers building microservices that react to Sensor Hub alerts.  
-**Outcome:** A clear mental model of how the system streams telemetry, authenticates consumers, and guarantees delivery.  
+**Outcome:** A clear mental model of how the fictional design streams telemetry, authenticates consumers, and handles acknowledgement and redelivery.
+
 **Shows:** Mermaid sequence diagrams, Protobuf service definitions, and explanations of distributed system concepts designed for a technical audience.
 
 ## Publish-subscribe architecture
 
-Sensor Hub uses a publish-subscribe (Pub/Sub) pattern to distribute sensor telemetry to millions of listening clients. Instead of traditional REST polling, which creates unnecessary network overhead, Sensor Hub pushes events to connected clients in real time using HTTP/2 and gRPC.
+Sensor Hub uses a publish-subscribe (Pub/Sub) pattern to distribute sensor telemetry to connected clients. Instead of repeated REST polling, the fictional design streams events over HTTP/2 and gRPC.
 
 When you subscribe to a Sensor Hub topic, you establish a long-lived server-streaming gRPC connection.
 
 1. **Protocol Buffers (Protobuf):** Data is serialized into compact binary payloads, reducing bandwidth usage compared to JSON.
 2. **HTTP/2 streaming:** The connection remains open, allowing the server to push new events to your client as they arrive.
 3. **Dead-letter queues (DLQ):** If your client fails to acknowledge an event within the retry window, the event is routed to a DLQ for inspection or later reprocessing.
+
+These delivery rules are design assumptions for the fictional sample. They are not measured scale results or guarantees from a deployed service. A production specification would need to define throughput, retention, retry limits, ordering, duplicate delivery, and failure behavior before an integration guide could make stronger claims.
 
 ## Streaming data flow
 

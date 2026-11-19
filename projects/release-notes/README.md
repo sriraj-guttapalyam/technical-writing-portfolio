@@ -1,6 +1,6 @@
 # Release notes: Local Callout Studio, first release
 
-Release notes for the [Local Callout Studio](../../local-callout-studio/README.md) tool in this repository. They follow the structure used in customer-facing release notes: new features, enhancements, fixed issues, and known issues. Only statements that the code and its test suite support are included.
+Release notes for the [Local Callout Studio](https://github.com/sriraj-guttapalyam/technical-writing-portfolio/tree/main/local-callout-studio) tool in this repository. They follow the structure used in customer-facing release notes: new features, enhancements, fixed issues, and known issues. Only statements that the code and its test suite support are included.
 
 **Audience:** Technical writers who annotate screenshots.  
 **Shows:** Customer-facing wording, grouping by reader impact, and known issues stated plainly.

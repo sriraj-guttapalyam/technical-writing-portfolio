@@ -1,10 +1,17 @@
 # Sriraj Guttapalyam: technical writing portfolio
 
-> Senior technical writer with ten years of experience in structured authoring, API documentation, and AI-ready content. The samples use public or fictional products.
+> Senior technical writer with 10+ years of experience in API documentation, docs-as-code, AI-assisted documentation workflows, and structured authoring. The samples use public or fictional products.
 
 ## Start here
 - [README](README.md): overview, samples, experience
 - [Review map](PORTFOLIO_CONTENT_GUIDE.md): where each skill shows and how the samples are checked
+- [Authorship and validation](projects/portfolio-evidence/README.md): human decisions, AI assistance, checks, and limitations
+
+## Flagship samples
+- [API reference](projects/api-reference/README.md): GitHub REST parameters, pagination, nullable fields, and error recovery
+- [Webhook integration](projects/webhook-integration/README.md): HMAC-SHA256 verification, idempotency, and unit-tested Python
+- [Docs as code](projects/docs-as-code/README.md): pull-request review, source checks, and Docusaurus build validation
+- [AI documentation case study](projects/ai-ready-content/README.md): retrieval baseline, metadata, limitations, and human-in-the-loop workflow
 
 ## AI and content strategy
 - [AI-ready content](projects/ai-ready-content/README.md): chunking, metadata, and a hand-run retrieval test

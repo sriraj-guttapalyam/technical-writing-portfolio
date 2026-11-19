@@ -9,6 +9,8 @@ Use this guide to receive GitHub webhook deliveries safely, verify the `X-Hub-Si
 
 Problem: a public webhook URL accepts HTTP `POST` requests from the internet, so a receiver that parses JSON before checking the signature is open to spoofed events, and a receiver that runs slow tasks inline times out and triggers duplicate deliveries. Approach: verify the raw request bytes with HMAC-SHA256 in constant time, deduplicate on the delivery identifier, and acknowledge receipt before running background work. Validation: the verification helper is tested in `test_verify_signature.py` and follows the GitHub webhook specification.
 
+The [authorship and validation record](../portfolio-evidence/README.md) identifies the writer-owned decisions, AI-assisted work, checks, and limitations for this flagship sample.
+
 ```mermaid
 flowchart LR
     A[Read raw request bytes] --> B{Valid X-Hub-Signature-256?}

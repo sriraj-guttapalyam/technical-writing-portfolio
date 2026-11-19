@@ -5,6 +5,8 @@ AI tools can draft, restructure, and check documentation quickly. They can also 
 **Audience:** Documentation managers deciding how a team should use AI, and writers adopting it.  
 **Shows:** A defined human-in-the-loop process, reusable prompts with review steps, an agent rule file, and a style checklist that needs no AI at all.
 
+This workflow is the process and authorship companion to the [AI documentation case study](../ai-ready-content/README.md). The [authorship and validation record](../portfolio-evidence/README.md) maps the same responsibility boundary across all four flagship samples.
+
 ## The process
 
 ```mermaid
@@ -64,4 +66,13 @@ Each prompt file lists its purpose, input, the prompt, the failures to look for,
 
 ## How this portfolio was made
 
-I wrote the samples and chose their subjects. I used AI tools to help restructure text, propose tests, and review drafts, and I checked commands, links, and claims against the cited sources. The retrieval test in the [AI-ready content sample](../ai-ready-content/README.md) is designed to be run by hand, so its results come from a person checking real search results, not from a model's description of them.
+I chose the sample subjects, audiences, scope, task sequence, warnings, and validation boundaries. AI tools assisted with restructuring, wording alternatives, test ideas, and draft review. I accepted, revised, or rejected that output and remain responsible for the published claims.
+
+| Artifact | Human-owned work | AI-assisted work | Verification |
+| --- | --- | --- | --- |
+| API and integration samples | Scope, task flow, security boundaries, examples, and limitations | Draft review, wording alternatives, and test ideas | Vendor references, syntax checks, synchronized source, and unit tests |
+| Docs-as-code sample | Check scope, review roles, workflow, and failure policy | Check implementation assistance and draft review | Repository checker, workflow excerpt synchronization, and Docusaurus build |
+| AI-ready content sample | Chunking rules, metadata choices, question set, scoring, and limitations | Restructuring and retrieval-question suggestions | Author-scored baseline log and explicit evidence status |
+| Portfolio navigation and positioning | Target role, flagship selection, and final claims | Copy alternatives and consistency review | Link checks, production build, and manual desktop and mobile review |
+
+The retrieval baseline in the [AI-ready content sample](../ai-ready-content/README.md) was scored by the author using local keyword search and manual section checks. It is not a model-generated result, independent test, or production RAG benchmark. Round 2 remains pending.

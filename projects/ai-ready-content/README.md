@@ -1,9 +1,9 @@
-# Make a procedure retrievable by search and AI assistants
+# Design and evaluate retrievable documentation
 
 Search boxes, chat assistants, and retrieval systems do not read a page top to bottom. They pull out a chunk and show it alone. This sample shows how to write and structure a procedure so each chunk still makes sense, and how a writer can test that without any programming.
 
 **Audience:** Documentation leads and writers who need their content to work outside the page it was written on.  
-**Shows:** Chunk-friendly structure, a metadata schema, and a retrieval test a writer can run by hand.
+**Shows:** Chunk-friendly structure, a metadata schema, a documented retrieval baseline, and the limits of a writer-run evaluation.
 
 ## The problem
 
@@ -31,7 +31,13 @@ The [question set and results log](question-set.md) has 27 questions written in 
 3. Record the rank in the log and total the round.
 4. Change the content, run the same round again, and compare.
 
-Run one round on the original pages and one on the restructured versions. The difference is the evidence for the structural rules above. Round 1 on the original pages is logged in the [question set](question-set.md): September 30, 2026, local keyword search plus manual section check, 22 of 27 answers in the top result and 27 of 27 in the top three. The misses came from answers placed below code blocks or inside shared table rows. The next round should run the same 27 questions against the restructured version and compare.
+## Evidence status
+
+Round 1 on the original pages is logged in the [question set](question-set.md): September 30, 2026, local keyword search plus manual section check, 22 of 27 answers in the top result and 27 of 27 in the top three. The misses came from answers placed below code blocks or inside shared table rows.
+
+This result is a baseline, not proof that the restructured content improved retrieval. Round 2 has not been run against the restructured content. The method also does not use embeddings, a vector database, reranking, or generated-answer evaluation, so it must not be presented as a production RAG benchmark.
+
+The companion [AI workflow and authorship disclosure](../ai-workflows/README.md) explains the prompts and human decisions. The [authorship and validation record](../portfolio-evidence/README.md) maps the checks and limitations across all four flagship samples.
 
 ### Limits of this test
 
