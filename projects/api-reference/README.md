@@ -10,6 +10,8 @@ Use this endpoint to read issues for a repository, such as a documentation backl
 
 Problem: a backlog report needs correct paging, correct filtering, and clear recovery for each failure. Approach: one public endpoint shown end to end, with curl for inspection and short client loops for reuse. Validation: manual requests against the public `github/docs` repository plus the OpenAPI description in the companion sample. Limits: read calls only. Write calls are noted separately and were not exercised here.
 
+The [authorship and validation record](../portfolio-evidence/README.md) identifies the writer-owned decisions, AI-assisted work, checks, and limitations for this flagship sample.
+
 ## Before you begin
 
 You must install curl before proceeding. The multiline examples below use Bash syntax, so do not paste them unchanged into PowerShell. A PowerShell example appears later in this guide.
@@ -274,9 +276,11 @@ function parseNextLink(value) {
 
 These loops were checked for syntax in this repository. Live paging behavior changes with repository activity, so test with a small `per_page` value first.
 
-### Code design pattern: handle rate limits gracefully
-When integrating with APIs at scale, you must anticipate rate limits (HTTP `429`) and forbidden errors due to limit exhaustion (HTTP `403`). In the Python and JavaScript examples above, the scripts intercept these status codes and inspect the `Retry-After` header. 
-If the header exists, the script pauses execution using a sleep or timeout promise for the exact duration requested by the server before retrying. If no header is provided, it defaults to a 60-second backoff. This design pattern ensures your client behaves as a "good citizen," preventing temporary rate-limit blocks from escalating into permanent bans or dropped data.
+## Handle rate limits in client code
+
+GitHub can return HTTP `403` or `429` when a rate limit is exceeded. The Python and JavaScript examples above inspect `Retry-After` and wait for the requested interval. If that header is absent, they wait for 60 seconds before retrying. Production clients should also inspect `X-RateLimit-Remaining` and `X-RateLimit-Reset`, limit retry attempts, and record enough response metadata to diagnose repeated throttling.
+
+This retry behavior reduces unnecessary traffic. It does not guarantee that a later request succeeds, and it does not prevent every lost or delayed operation. See the GitHub rate-limit guidance in the References section before choosing a retry policy for a production integration.
 
 ## Write operations use other endpoints
 

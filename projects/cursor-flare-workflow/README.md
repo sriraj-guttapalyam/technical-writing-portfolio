@@ -142,17 +142,19 @@ Before sending the draft to an engineer or product manager:
 2. Send the SME a short, numbered list of the `<!-- TODO SME -->` questions rather than asking them to hunt for errors across a 20-page PDF.
 3. Resolve the SME answers, build the HTML5 and PDF targets in MadCap Flare, and inspect the output in the Flare viewer.
 
-## Measure time saved and quality gained
+## Measure workflow impact
 
-Using Cursor as a structured synthesis and checking engine shifts writer hours from mechanical formatting to product verification:
+This portfolio does not include a controlled productivity study. Teams adopting the workflow should establish a baseline and measure the same activities before and after adoption.
 
-| Activity | Traditional manual workflow | Cursor + Flare workflow | Quality improvement |
-| --- | --- | --- | --- |
-| Gap analysis across Jira, Confluence, and TOC | 60 to 90 minutes of manual cross-checking | 15 minutes with `@fltoc` + spec comparison | Fewer missed topics or duplicate snippets |
-| Turning Teams, video, and email notes into a draft | 2 to 3 hours of replaying video and typing XHTML tags | 35 to 45 minutes from fact sheet to `.htm` draft | Every claim traces to a source or becomes an SME question |
-| Applying Flare variables, snippets, and xrefs | 30 minutes of manual tag insertion | 5 minutes using an exemplar topic and `@flvar` | Consistent `MadCap:variable` and `MadCap:snippetBlock` reuse |
-| QA label reconciliation and style review | 45 minutes of visual proofreading | 15 minutes of targeted diff + rule check | Zero `you`/`your` leaks, no broken XML tags, exact UI labels |
-| Release notes from 30+ Jira tickets | 2 hours of reading tickets and rewriting | 25 minutes with `Prompt 5` + human verification | Customer-focused impact statements with no leaked ticket IDs |
+| Activity | Measure | Quality check |
+| --- | --- | --- |
+| Gap analysis across Jira, Confluence, and the TOC | Time from source collection to an approved impact list | Number of affected topics or reusable assets missed during review |
+| Turning meeting, video, and email notes into a draft | Drafting time after the fact sheet is approved | Percentage of claims linked to a source or recorded as an SME question |
+| Applying Flare variables, snippets, and cross-references | Manual correction time after the first build | Broken references, invalid XML, and missed reuse opportunities |
+| QA label reconciliation and style review | Verification time per changed topic | UI-label corrections and style findings found after SME review |
+| Preparing release notes from Jira issues | Time from approved issue set to reviewed notes | Internal IDs, unsupported claims, or missing customer impact found in review |
+
+Record the number and complexity of topics, the reviewer, the model and tool configuration, and the verification effort. Without that context, time comparisons can imply precision that the evidence does not support.
 
 ## Guardrails that protect documentation quality
 

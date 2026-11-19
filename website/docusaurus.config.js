@@ -10,13 +10,14 @@ const repoHttpUrl = `https://github.com/${owner}/${repoName}`;
 module.exports = {
   title: "Sriraj Guttapalyam",
   tagline:
-    "Senior Technical Writer — Docs-as-Code, API & Developer Docs, AI-Ready Content (RAG), In-App Guidance, and Structured Authoring",
+    "Senior Technical Writer | API Documentation, Docs-as-Code, and AI Documentation Governance",
+  favicon: "img/favicon.svg",
   url: `https://${owner}.github.io`,
   baseUrl,
   organizationName: owner,
   projectName: repoName,
   trailingSlash: false,
-  onBrokenLinks: "warn",
+  onBrokenLinks: "throw",
   markdown: {
     mermaid: true,
     hooks: {
@@ -33,7 +34,11 @@ module.exports = {
           path: "../projects",
           routeBasePath: "docs",
           sidebarPath: "./sidebars.js",
-          editUrl: `${repoHttpUrl}/tree/main/projects/`,
+          editUrl: ({ docPath }) => {
+            const relativePath = docPath.replace(/^(\.\.\/)?projects\//, "");
+            const normalizedPath = `projects/${relativePath}`;
+            return `${repoHttpUrl}/edit/main/${normalizedPath}`;
+          },
           exclude: [
             "**/dogbench/**",
             "**/ai-documentation-mastery/**",
@@ -68,28 +73,28 @@ module.exports = {
         title: "Sriraj Guttapalyam",
         items: [
           {
-            to: "/docs/in-app-guidance/",
-            label: "In-App UX",
+            to: "/docs/api-reference",
+            label: "API Reference",
             position: "left",
           },
           {
-            to: "/docs/rbac-administration/",
-            label: "IAM & RBAC",
+            to: "/docs/webhook-integration",
+            label: "Webhooks",
             position: "left",
           },
           {
-            to: "/docs/api-reference/",
-            label: "API & Webhooks",
-            position: "left",
-          },
-          {
-            to: "/docs/ai-ready-content/",
-            label: "AI & RAG Docs",
-            position: "left",
-          },
-          {
-            to: "/docs/docs-as-code/",
+            to: "/docs/docs-as-code",
             label: "Docs-as-Code",
+            position: "left",
+          },
+          {
+            to: "/docs/ai-ready-content",
+            label: "AI Case Study",
+            position: "left",
+          },
+          {
+            to: "/docs/in-app-guidance",
+            label: "More Samples",
             position: "left",
           },
           {
@@ -110,27 +115,27 @@ module.exports = {
           {
             title: "SaaS, IAM & In-App UX",
             items: [
-              { label: "In-App Onboarding & Announcements", to: "/docs/in-app-guidance/" },
-              { label: "RBAC & Scoped Access Admin", to: "/docs/rbac-administration/" },
-              { label: "Cloud Log Diagnostics", to: "/docs/cloud-user-guide/" },
+              { label: "In-App Onboarding & Announcements", to: "/docs/in-app-guidance" },
+              { label: "RBAC & Scoped Access Admin", to: "/docs/rbac-administration" },
+              { label: "Cloud Log Diagnostics", to: "/docs/cloud-user-guide" },
             ],
           },
           {
             title: "Developer & API Docs",
             items: [
-              { label: "REST API Reference", to: "/docs/api-reference/" },
-              { label: "OpenAPI 3.x Specification", to: "/docs/openapi-reference/" },
-              { label: "HMAC Webhook Security", to: "/docs/webhook-integration/" },
-              { label: "Event-Driven gRPC Architecture", to: "/docs/grpc-architecture/" },
+              { label: "REST API Reference", to: "/docs/api-reference" },
+              { label: "HMAC Webhook Security", to: "/docs/webhook-integration" },
+              { label: "OpenAPI 3.x Specification", to: "/docs/openapi-reference" },
+              { label: "Event-Driven gRPC Architecture", to: "/docs/grpc-architecture" },
             ],
           },
           {
             title: "AI, RAG & Architecture",
             items: [
-              { label: "RAG-Ready Content & Retrieval Test", to: "/docs/ai-ready-content/" },
-              { label: "AI Prompting & Guardrails", to: "/docs/ai-workflows/" },
-              { label: "Docs-as-Code CI/CD", to: "/docs/docs-as-code/" },
-              { label: "DITA 1.3 Structured Authoring", to: "/docs/structured-authoring/" },
+              { label: "RAG-Ready Content & Retrieval Baseline", to: "/docs/ai-ready-content" },
+              { label: "AI Prompting & Guardrails", to: "/docs/ai-workflows" },
+              { label: "Docs-as-Code CI/CD", to: "/docs/docs-as-code" },
+              { label: "DITA 1.3 Structured Authoring", to: "/docs/structured-authoring" },
             ],
           },
         ],

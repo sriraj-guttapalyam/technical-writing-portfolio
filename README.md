@@ -11,24 +11,30 @@ Currently at Picarro, I author the Fenceline Monitoring Cloud User Guide, Admini
 
 ## Start here
 
-### Quick 10-minute path for SaaS, IAM, and developer documentation teams
+### Four flagship samples for API, docs-as-code, and AI documentation roles
 
-These five samples cover the full modern documentation lifecycle across docs-as-code, identity/access administration, in-app engagement, APIs, and AI retrieval:
+These samples provide the clearest evidence of technical depth, writing judgment, and validation:
 
-1. [Design and target in-app onboarding and release announcements](projects/in-app-guidance/README.md) - Role-targeted MFA onboarding walkthrough, release banner, UX microcopy budgets, portable JSON spec, and completion analytics.
-2. [Configure RBAC for site users](projects/rbac-administration/README.md) - Least-privilege permissions matrix, scoped administrator workflow, and audit-log verification.
-3. [API reference](projects/api-reference/README.md) and [Webhook integration](projects/webhook-integration/README.md) - REST parameters, pagination, status recovery, and unit-tested HMAC-SHA256 signature verification.
-4. [Make a procedure retrievable by AI and search](projects/ai-ready-content/README.md) and [Use AI without losing accuracy](projects/ai-workflows/README.md) - RAG chunking, YAML metadata schema, `llms.txt`, reusable prompt library, custom style rules, and hallucination controls.
-5. [Review and validate a documentation change](projects/docs-as-code/README.md) - GitHub PR review model and automated GitHub Actions CI pipeline.
+1. [API reference](projects/api-reference/README.md) - Documents a public GitHub REST endpoint with parameters, nullable fields, pagination, error recovery, and bounded validation.
+2. [Webhook integration](projects/webhook-integration/README.md) - Explains HMAC-SHA256 signature verification, fast acknowledgement, idempotent retries, and unit-tested Python code.
+3. [Docs-as-code review and validation](projects/docs-as-code/README.md) - Connects focused pull requests, automated source checks, a Docusaurus production build, and human review responsibilities.
+4. [AI documentation case study](projects/ai-ready-content/README.md) and [AI workflow and authorship disclosure](projects/ai-workflows/README.md) - Records a retrieval baseline, its limits, prompt guardrails, human decisions, and validation methods.
 
-Then see [Cross-functional collaboration (the "how")](#cross-functional-collaboration-the-how) below.
+The [authorship and validation record](projects/portfolio-evidence/README.md) identifies where AI assisted, what remained writer-owned, and what each automated or manual check proves. Additional SaaS, in-app, DITA, release, hardware, and troubleshooting samples remain available in the [Samples](#samples) section.
+
+| Flagship | Evidence available in this repository |
+| --- | --- |
+| API reference | Public GitHub endpoint and vendor references, syntax-checked code examples, documented validation limits |
+| Webhook integration | Source helper synchronized with the guide and unit tests run by the repository check |
+| Docs as code | Local checker, pull-request workflow, Docusaurus build, and an explicitly bounded review example |
+| AI documentation | Dated 27-question baseline, stated limitations, prompt library, style rules, and authorship disclosure |
 
 | Focus area | Recommended reading order |
 | --- | --- |
-| AI documentation, prompts, and RAG readiness | [Make a procedure retrievable](projects/ai-ready-content/README.md), [Use AI without losing accuracy](projects/ai-workflows/README.md), [`llms.txt`](llms.txt), then [Accelerate MadCap Flare authoring with Cursor](projects/cursor-flare-workflow/README.md) |
+| AI documentation, prompts, and RAG readiness | [Make a procedure retrievable](projects/ai-ready-content/README.md), [Use AI without losing accuracy](projects/ai-workflows/README.md), then review [`llms.txt`](llms.txt) and the [authorship record](projects/portfolio-evidence/README.md) |
 | In-app user guidance and IT admin UX | [In-app onboarding and release announcements](projects/in-app-guidance/README.md), [Configure RBAC for site users](projects/rbac-administration/README.md), then [Investigate errors in CloudWatch](projects/cloud-user-guide/README.md) |
-| Developer and API documentation | [API reference](projects/api-reference/README.md), [OpenAPI description](projects/openapi-reference/README.md), [Webhook integration](projects/webhook-integration/README.md), then [Event-driven architecture with gRPC](projects/grpc-architecture/README.md) |
-| Documentation architecture and docs-as-code | [Design the information architecture](projects/doc-architecture/README.md), then [Review and validate a documentation change](projects/docs-as-code/README.md) |
+| Developer and API documentation | [API reference](projects/api-reference/README.md), [Webhook integration](projects/webhook-integration/README.md), then the supporting [OpenAPI description](projects/openapi-reference/README.md) |
+| Documentation architecture and docs-as-code | [Review and validate a documentation change](projects/docs-as-code/README.md), then [Design the information architecture](projects/doc-architecture/README.md) |
 | Structured authoring (DITA/XML and Flare) | [Check a Kubernetes rollout in DITA](projects/structured-authoring/README.md), then [Accelerate MadCap Flare authoring with Cursor](projects/cursor-flare-workflow/README.md) |
 
 ### Cross-functional collaboration (the "how")

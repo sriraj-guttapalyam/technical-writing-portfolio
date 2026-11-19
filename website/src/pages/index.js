@@ -4,52 +4,36 @@ import Link from "@docusaurus/Link";
 
 const TRACKS = [
   {
-    badge: "In-App UX & Product Guidance",
-    title: "Onboarding Tours, Banners & Guide Analytics",
+    badge: "Flagship 1 · REST API documentation",
+    title: "GitHub REST API Reference",
     description:
-      "Role-gated conditional MFA walkthrough, non-blocking release announcement banner, UX microcopy character budgets, portable JSON spec, and completion funnel diagnostics.",
-    primaryTo: "/docs/in-app-guidance/",
-    primaryLabel: "View In-App Guidance Sample →",
+      "A public endpoint documented with parameters, pagination, nullable fields, status-code recovery, Bash and PowerShell requests, and reusable client examples.",
+    primaryTo: "/docs/api-reference",
+    primaryLabel: "Review API Reference →",
   },
   {
-    badge: "Identity, Access & Cloud Admin",
-    title: "Enterprise RBAC & Operational Diagnostics",
+    badge: "Flagship 2 · Secure integrations",
+    title: "Webhook Signature Verification",
     description:
-      "Least-privilege permission matrices, site-scoped role workflows, audit-log compliance verification, and evidence-bounded AWS CloudWatch error investigation.",
-    primaryTo: "/docs/rbac-administration/",
-    primaryLabel: "View RBAC Admin Guide →",
+      "A security-first integration guide with constant-time HMAC-SHA256 verification, idempotent retry handling, synchronized source code, and unit tests.",
+    primaryTo: "/docs/webhook-integration",
+    primaryLabel: "Review Webhook Guide →",
   },
   {
-    badge: "Developer & API Documentation",
-    title: "REST APIs, OpenAPI 3.x, Webhooks & gRPC",
+    badge: "Flagship 3 · Documentation engineering",
+    title: "Docs-as-Code Review and Validation",
     description:
-      "Pagination with Link headers, status-code recovery tables, OpenAPI schema design, unit-tested HMAC-SHA256 webhook verification, and Protobuf sequence flows.",
-    primaryTo: "/docs/api-reference/",
-    primaryLabel: "View API & Webhook Docs →",
+      "A focused pull-request workflow backed by local source checks, automated tests, a Docusaurus production build, and defined human review responsibilities.",
+    primaryTo: "/docs/docs-as-code",
+    primaryLabel: "Review Docs-as-Code Sample →",
   },
   {
-    badge: "AI Tooling, Prompts & RAG Retrieval",
-    title: "AI-Retrievable Docs & Hallucination Guardrails",
+    badge: "Flagship 4 · AI documentation governance",
+    title: "AI Retrieval Baseline and Guardrails",
     description:
-      "Chunk-autonomous procedures, YAML metadata schema, root llms.txt index, 27-query retrieval test, standardized prompt templates, and custom AI style rules.",
-    primaryTo: "/docs/ai-ready-content/",
-    primaryLabel: "View AI & RAG Strategy →",
-  },
-  {
-    badge: "Docs-as-Code & Information Architecture",
-    title: "GitHub Actions CI/CD, Governance & DITA 1.3",
-    description:
-      "Pull-request editorial and technical review workflow, automated Python/XML/JSON CI validation, taxonomy governance, and modular DITA 1.3 Kubernetes rollout maps.",
-    primaryTo: "/docs/docs-as-code/",
-    primaryLabel: "View Docs-as-Code Pipeline →",
-  },
-  {
-    badge: "Rolling Releases & Connected Systems",
-    title: "Breaking-Change Migrations & Release Notes",
-    description:
-      "Customer-facing release notes focused on admin impact, unit-tested Python 3.12 compatibility migration guides, and safety-first hardware provisioning.",
-    primaryTo: "/docs/release-notes/",
-    primaryLabel: "View Release Docs →",
+      "A dated 27-question baseline with explicit limits, chunking and metadata rules, prompt guardrails, and a transparent account of AI assistance.",
+    primaryTo: "/docs/ai-ready-content",
+    primaryLabel: "Review AI Documentation Case Study →",
   },
 ];
 
@@ -57,32 +41,31 @@ export default function Home() {
   return (
     <Layout
       title="Technical Writing & Documentation Engineering Portfolio"
-      description="Portfolio of Sriraj Guttapalyam — Senior Technical Writer specializing in Docs-as-Code, API documentation, AI-ready RAG content, in-app user guidance, and structured authoring."
+      description="Portfolio of Sriraj Guttapalyam, a senior technical writer specializing in API documentation, docs-as-code, and AI documentation governance."
     >
       <header className="heroBanner">
         <div className="container">
           <p className="heroEyebrow">TECHNICAL WRITING &amp; DOCUMENTATION ENGINEERING PORTFOLIO</p>
           <h1 className="heroTitle">Sriraj Guttapalyam</h1>
           <p className="heroSubtitle">
-            Senior Technical Writer with 10+ years building clear, developer- and IT-admin-focused documentation across SaaS platforms, identity &amp; security compliance, APIs, and connected systems. Built as a live <strong>GitHub Docs-as-Code + Docusaurus</strong> portal with automated CI checks and <code>llms.txt</code> indexing.
+            Senior Technical Writer with 10+ years creating API, developer, and enterprise product documentation. This portfolio foregrounds four reviewable samples with stated evidence and limits. GitHub Actions runs the repository checks on pull requests and builds the Docusaurus portal before publication.
           </p>
           <div className="heroButtons">
-            <Link className="button button--primary button--lg" to="/docs/in-app-guidance/">
-              Start Guided Tour of Samples
+            <Link className="button button--primary button--lg" to="/docs/api-reference">
+              Start with the API Reference
             </Link>
             <Link
               className="button button--secondary button--lg"
-              to="/docs/ai-workflows/"
+              to="/docs/ai-workflows"
             >
-              Explore AI Prompts &amp; Guardrails
+              Review AI Use and Guardrails
             </Link>
           </div>
           <div className="heroPills">
-            <span>GitHub Docs-as-Code &amp; Docusaurus CI/CD</span>
-            <span>REST APIs, OpenAPI &amp; Webhooks</span>
-            <span>In-App Onboarding &amp; UX Microcopy</span>
-            <span>Prompt Engineering &amp; RAG Chunking</span>
-            <span>DITA/XML &amp; MadCap Flare</span>
+            <span>REST APIs &amp; OpenAPI</span>
+            <span>Secure Webhook Integration</span>
+            <span>GitHub Docs-as-Code &amp; CI</span>
+            <span>AI Documentation Guardrails</span>
           </div>
         </div>
       </header>
@@ -90,9 +73,9 @@ export default function Home() {
       <main className="mainSection">
         <div className="container">
           <div className="sectionHeader">
-            <h2>Explore Reference Samples by Discipline</h2>
+            <h2>Review the Flagship Samples</h2>
             <p>
-              Every sample uses a public API or fictional enterprise platform (<strong>Sensor Hub</strong>) so all source files, JSON/YAML specs, unit tests, and AI prompts are 100% open for technical review.
+              Each flagship uses a public API, repository evidence, or a clearly identified fictional platform. Source files, tests, prompts, validation methods, and known limitations are available for review.
             </p>
           </div>
           <div className="cardGrid">

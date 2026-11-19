@@ -1,4 +1,4 @@
-# Question set and results log
+# Question set and baseline results log
 
 Use this table to run the hand-run retrieval test described in the [AI-ready content sample](README.md). Each question has the section that holds the answer, so a result can be scored without guessing.
 
@@ -43,7 +43,7 @@ Use this table to run the hand-run retrieval test described in the [AI-ready con
 
 ## Results log
 
-Round 1 was run on September 30, 2026. The method was a local keyword search over the five procedure READMEs plus a manual check that the listed section answers the question. File ranking used distinctive words from each question. Section rank reflects where the answer sits in the file. This is a baseline, not a GitHub search log.
+Round 1 was run on September 30, 2026. The author used a local keyword search over the five procedure READMEs and manually checked whether the listed section answered each question. File ranking used distinctive words from each question. Section rank reflects where the answer sits in the file. This is an author-scored baseline, not a GitHub search log, RAG-system evaluation, or independent usability test.
 
 | # | Rank of first correct result (1 to 3, or none) | Search method used | Notes |
 | --- | --- | --- | --- |
@@ -79,4 +79,4 @@ Round 1 was run on September 30, 2026. The method was a local keyword search ove
 **Answer in top result:** 22 of 27
 **Answer in top three:** 27 of 27
 
-What this round showed: file level matching was clean. Section level cost came from answers placed below code blocks or inside shared table rows. The next round should run on the restructured ai-ready version and compare the same 27 questions. A second question set from someone else is still missing.
+What this round showed: file-level matching was clean. Section-level cost came from answers placed below code blocks or inside shared table rows. Round 2 has not been run on the restructured version. A valid comparison still requires the same search method, a recorded Round 2 result, and a held-out question set written by someone other than the author.

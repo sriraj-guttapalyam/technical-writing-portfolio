@@ -2,6 +2,15 @@
 
 A short guide to where each documentation skill shows up in this repository, and how each sample is checked.
 
+## Four flagship samples
+
+| Flagship | What to review | Validation evidence |
+| --- | --- | --- |
+| [API reference](projects/api-reference/README.md) | Parameters, pagination, nullable fields, error recovery, and client examples | Public GitHub endpoint, cited vendor references, and syntax-checked Python and JavaScript |
+| [Webhook integration](projects/webhook-integration/README.md) | Security-first sequence, constant-time HMAC verification, and retry handling | Synchronized source helper and automated unit tests |
+| [Docs as code](projects/docs-as-code/README.md) | Focused change workflow, automated checks, and review responsibilities | Repository checker, pull-request workflow, and Docusaurus production build |
+| [AI documentation case study](projects/ai-ready-content/README.md) | Chunking rules, metadata, retrieval baseline, and stated limitations | Dated 27-question log, [AI workflow disclosure](projects/ai-workflows/README.md), and [authorship record](projects/portfolio-evidence/README.md) |
+
 ## Where to look for each skill
 
 | Skill | Where it shows |
@@ -21,10 +30,10 @@ A short guide to where each documentation skill shows up in this repository, and
 
 ## Reading paths
 
-- **Developer documentation:** API reference, OpenAPI description, webhook integration, gRPC architecture, then the repository check.
+- **Developer documentation:** API reference, webhook integration, docs-as-code validation, then the supporting OpenAPI description.
 - **Product documentation:** RBAC administration, cloud operations, hardware setup, then release notes.
-- **AI documentation:** AI-ready content, `llms.txt`, AI workflows, then the Cursor + MadCap Flare guide.
-- **Architecture or leadership:** Doc set design, docs as code, then the governance table in the architecture sample.
+- **AI documentation:** AI-ready content, AI workflows, `llms.txt`, then the authorship and validation record.
+- **Architecture or leadership:** Docs as code, doc set design, then the governance table in the architecture sample.
 
 ## Conventions
 
