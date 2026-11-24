@@ -2,7 +2,13 @@
 
 This sample combines an operations procedure with its DITA source. The procedure is intended for an operator checking a release. The source shows how the same content can be organized for structured publishing.
 
-Problem: an operator needs a read-only check with a clear stop line. Approach: verify context first, wait with a bounded timeout, then investigate without changing the workload. Validation: commands follow the linked kubectl reference. Limits: deployment status only. Application health needs the service smoke test noted at the end.
+**Problem:** An operator needs a read-only check with a clear stop line.
+
+**Approach:** Verify context first, wait with a bounded timeout, then investigate without changing the workload.
+
+**Validation:** Commands follow the linked kubectl reference.
+
+**Limits:** Deployment status only. Application health needs the service smoke test noted at the end.
 
 ## Before you begin
 

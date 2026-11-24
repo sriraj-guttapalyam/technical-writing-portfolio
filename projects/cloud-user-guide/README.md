@@ -7,7 +7,13 @@ Use this procedure to collect evidence when an application reports errors but th
 **Outcome:** A bounded set of log evidence and a handoff that another engineer can reproduce.  
 **Shows:** A procedure that stops at what the evidence supports, with a cost warning, scope limits, and an escalation boundary.
 
-Problem: a report of errors with no clear cause. Approach: narrow the account, group, and time window first, then run a small query and hand off what it returns. Validation: the queries follow the linked CloudWatch reference, and each step states what it proves. Limits: log evidence only. No restart, rollback, or root cause claim.
+**Problem:** A report of errors with no clear cause.
+
+**Approach:** Narrow the account, group, and time window first, then run a small query and hand off what it returns.
+
+**Validation:** The queries follow the linked CloudWatch reference, and each step states what it proves.
+
+**Limits:** Log evidence only. No restart, rollback, or root cause claim.
 
 ```mermaid
 flowchart LR

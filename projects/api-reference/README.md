@@ -8,7 +8,13 @@ Use this endpoint to read issues for a repository, such as a documentation backl
 **API version used here:** `2022-11-28`, a supported version with an announced support end date of March 10, 2028.  
 **Shows:** Parameter tables, nullable fields, pagination, and a status-code recovery table in the shape a developer scans first.
 
-Problem: a backlog report needs correct paging, correct filtering, and clear recovery for each failure. Approach: one public endpoint shown end to end, with curl for inspection and short client loops for reuse. Validation: manual requests against the public `github/docs` repository plus the OpenAPI description in the companion sample. Limits: read calls only. Write calls are noted separately and were not exercised here.
+**Problem:** A backlog report needs correct paging, correct filtering, and clear recovery for each failure.
+
+**Approach:** One public endpoint shown end to end, with curl for inspection and short client loops for reuse.
+
+**Validation:** Manual requests against the public `github/docs` repository plus the OpenAPI description in the companion sample.
+
+**Limits:** Read calls only. Write calls are noted separately and were not exercised here.
 
 The [authorship and validation record](../portfolio-evidence/README.md) identifies the writer-owned decisions, AI-assisted work, checks, and limitations for this flagship sample.
 

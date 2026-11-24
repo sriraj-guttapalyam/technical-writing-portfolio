@@ -7,7 +7,13 @@ Use this guide to receive GitHub webhook deliveries safely, verify the `X-Hub-Si
 **Outcome:** A receiver that rejects unsigned or tampered requests, acknowledges deliveries within the timeout window, and processes retries idempotently.  
 **Shows:** Security-first task flow, constant-time HMAC verification, delivery headers, and unit-tested verification code.
 
-Problem: a public webhook URL accepts HTTP `POST` requests from the internet, so a receiver that parses JSON before checking the signature is open to spoofed events, and a receiver that runs slow tasks inline times out and triggers duplicate deliveries. Approach: verify the raw request bytes with HMAC-SHA256 in constant time, deduplicate on the delivery identifier, and acknowledge receipt before running background work. Validation: the verification helper is tested in `test_verify_signature.py` and follows the GitHub webhook specification.
+**Problem:** A public webhook URL accepts HTTP `POST` requests from the internet. A receiver that parses JSON before checking the signature is open to spoofed events. A receiver that runs slow tasks inline can time out and trigger duplicate deliveries.
+
+**Approach:** Verify the raw request bytes with HMAC-SHA256 in constant time, deduplicate on the delivery identifier, and acknowledge receipt before running background work.
+
+**Validation:** The verification helper is tested in `test_verify_signature.py` and follows the GitHub webhook specification.
+
+**Limits:** The sample tests signature verification only. It does not deploy an HTTP receiver, queue, or secret-rotation system.
 
 The [authorship and validation record](../portfolio-evidence/README.md) identifies the writer-owned decisions, AI-assisted work, checks, and limitations for this flagship sample.
 
