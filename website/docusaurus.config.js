@@ -34,17 +34,13 @@ module.exports = {
           path: "../projects",
           routeBasePath: "docs",
           sidebarPath: "./sidebars.js",
-          editUrl: ({ docPath }) => {
-            const relativePath = docPath.replace(/^(\.\.\/)?projects\//, "");
-            const normalizedPath = `projects/${relativePath}`;
-            return `${repoHttpUrl}/edit/main/${normalizedPath}`;
-          },
           exclude: [
             "**/dogbench/**",
             "**/ai-documentation-mastery/**",
             "**/ai-ready-llms-txt-tutorial/**",
             "**/developer-documentation-masterclass/**",
             "**/markdown-for-technical-writers/**",
+            "**/portfolio-skills-zero-to-hero/**",
             "**/*.py",
             "**/*.yaml",
             "**/*.yml",
@@ -118,6 +114,7 @@ module.exports = {
               { label: "In-App Onboarding & Announcements", to: "/docs/in-app-guidance" },
               { label: "RBAC & Scoped Access Admin", to: "/docs/rbac-administration" },
               { label: "Cloud Log Diagnostics", to: "/docs/cloud-user-guide" },
+              { label: "Hardware Setup & Safety", to: "/docs/hardware-installation" },
             ],
           },
           {
@@ -127,15 +124,18 @@ module.exports = {
               { label: "HMAC Webhook Security", to: "/docs/webhook-integration" },
               { label: "OpenAPI 3.x Specification", to: "/docs/openapi-reference" },
               { label: "Event-Driven gRPC Architecture", to: "/docs/grpc-architecture" },
+              { label: "Release Migration & Notes", to: "/docs/release-documentation" },
             ],
           },
           {
-            title: "AI, RAG & Architecture",
+            title: "AI, Architecture & Evidence",
             items: [
-              { label: "RAG-Ready Content & Retrieval Baseline", to: "/docs/ai-ready-content" },
+              { label: "RAG-Ready Content & Baseline", to: "/docs/ai-ready-content" },
               { label: "AI Prompting & Guardrails", to: "/docs/ai-workflows" },
-              { label: "Docs-as-Code CI/CD", to: "/docs/docs-as-code" },
-              { label: "DITA 1.3 Structured Authoring", to: "/docs/structured-authoring" },
+              { label: "Cursor + MadCap Flare Workflow", to: "/docs/cursor-flare-workflow" },
+              { label: "DITA 1.3 & Information Architecture", to: "/docs/doc-architecture" },
+              { label: "Authorship & Validation Record", to: "/docs/portfolio-evidence" },
+              { label: "llms.txt Machine Index", href: `https://${owner}.github.io/${repoName}/llms.txt` },
             ],
           },
         ],
