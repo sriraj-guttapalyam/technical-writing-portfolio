@@ -21,6 +21,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
 
       - name: Set up Python 3.12
         uses: actions/setup-python@v6
@@ -37,10 +39,8 @@ jobs:
           cache: "npm"
           cache-dependency-path: "website/package-lock.json"
 
-      - name: Copy llms.txt into static assets
-        run: |
-          mkdir -p website/static
-          cp llms.txt website/static/llms.txt
+      - name: Verify static llms.txt exists
+        run: test -f website/static/llms.txt
 
       - name: Install Docusaurus dependencies and build static portal
         working-directory: website

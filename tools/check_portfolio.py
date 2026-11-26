@@ -17,6 +17,7 @@ EXCLUDED_PROJECT_DIRS = {
     "ai-ready-llms-txt-tutorial",
     "developer-documentation-masterclass",
     "markdown-for-technical-writers",
+    "portfolio-skills-zero-to-hero",
 }
 
 
@@ -187,7 +188,7 @@ def main():
         f"PASS: {document_count} Markdown documents; "
         f"{xml_count} DITA sources; Python syntax; synchronized excerpts."
     )
-    print("PASS: migration and webhook verification unit tests.")
+    print("PASS: migration, webhook verification, and in-app guidance unit tests.")
     print("Not checked: live systems, external links, DITA schema, or PDF layout.")
     return 0
 

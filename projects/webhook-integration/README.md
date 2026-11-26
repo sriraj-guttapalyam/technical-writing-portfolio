@@ -43,6 +43,26 @@ Each webhook `POST` request includes headers that identify the event, delivery a
 | `X-GitHub-Event` | Event name, such as `issues` or `pull_request`. |
 | `User-Agent` | Starts with `GitHub-Hookshot/`. Useful for request logging, not authentication. |
 
+The following sequence shows how a delivery moves between GitHub, the receiver, and background processing.
+
+```mermaid
+sequenceDiagram
+    participant G as GitHub
+    participant R as Receiver
+    participant Q as Background queue
+    G->>R: POST event with X-Hub-Signature-256 and X-GitHub-Delivery
+    R->>R: Compute HMAC-SHA256 over the raw body
+    alt Signature does not match
+        R-->>G: 401 Unauthorized
+    else Delivery ID already seen
+        R-->>G: 200 OK, no reprocessing
+    else New valid delivery
+        R->>Q: Enqueue event
+        R-->>G: 202 Accepted
+        Q->>Q: Process event asynchronously
+    end
+```
+
 Do not rely on `User-Agent` or source IP addresses alone to authenticate a webhook. Any client can set a header string. Always verify `X-Hub-Signature-256` when a secret is configured.
 
 <!-- pagebreak -->

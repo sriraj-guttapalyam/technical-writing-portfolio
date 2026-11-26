@@ -65,6 +65,22 @@ One person can hold more than one role in a small team, but the review record sh
 
 The repository includes [docs-check.yml](../../.github/workflows/docs-check.yml). It runs for pull requests and manual dispatches. The job checks the sources and examples, then creates a production Docusaurus build. Because broken links are build errors, a bad internal portal link fails before merge. The job needs no repository write permission and no application secrets.
 
+The following diagram shows how a documentation change moves from a branch to publication.
+
+```mermaid
+flowchart LR
+    A[Writer edits Markdown on a branch] --> B[Open pull request]
+    B --> C[docs-check.yml runs]
+    C --> D{Source checks and tests pass?}
+    D -- No --> E[Fix the change and push again]
+    E --> C
+    D -- Yes --> F{Docusaurus build and link check pass?}
+    F -- No --> E
+    F -- Yes --> G[Human review of accuracy and style]
+    G --> H[Merge to main]
+    H --> I[deploy-pages.yml publishes the portal]
+```
+
 ```yaml
 name: Check portfolio
 on:

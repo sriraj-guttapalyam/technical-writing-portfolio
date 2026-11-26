@@ -158,6 +158,18 @@ Endpoint-specific responses include `200`, `301`, `404`, and `422`. Authenticati
 
 If `Retry-After` is present, wait for that interval. If the primary limit is exhausted, use `X-RateLimit-Reset` to determine when it resets. For a secondary limit without these instructions, wait at least one minute, then increase the delay if the limit persists.
 
+```mermaid
+flowchart TD
+    A[Receive response] --> B{Status code}
+    B -- 200 --> C[Parse body and follow Link header]
+    B -- 301 --> D[Follow the intended API host and update stored details]
+    B -- 401 --> E[Check the token. Do not retry the same credential]
+    B -- 403 or 429 --> F[Wait for Retry-After or X-RateLimit-Reset]
+    B -- 404 --> G[Verify owner, repository, and token access]
+    B -- 422 --> H[Fix parameters, then retry]
+    B -- 5xx --> I[Retry a bounded number of times with increasing delay]
+```
+
 ## Follow pagination in code
 
 The shell examples above are for inspection. A report client should parse the `Link` header and keep the same headers on each page. The Python loop below uses only the standard library. It collects issue numbers, skips pull request records when a pure issue list is needed, and deduplicates by `id`.

@@ -1,29 +1,37 @@
 # Sriraj Guttapalyam: technical writing portfolio
 
-> Senior technical writer with ten years of experience in structured authoring, API documentation, and AI-ready content. The samples use public or fictional products.
+> Senior technical writer with 10+ years of experience in API documentation, docs-as-code, AI-assisted documentation workflows, and structured authoring. The samples use public or fictional products.
 
 ## Start here
-- [README](README.md): overview, samples, experience
-- [Review map](PORTFOLIO_CONTENT_GUIDE.md): where each skill shows and how the samples are checked
+- [Portfolio Portal](https://sriraj-guttapalyam.github.io/technical-writing-portfolio/): flagship samples and full domain catalog
+- [Repository README](https://github.com/sriraj-guttapalyam/technical-writing-portfolio/blob/main/README.md): overview, samples, experience, and tools
+- [Review map](https://github.com/sriraj-guttapalyam/technical-writing-portfolio/blob/main/PORTFOLIO_CONTENT_GUIDE.md): where each skill shows and how the samples are checked
+- [Authorship and validation](https://sriraj-guttapalyam.github.io/technical-writing-portfolio/docs/portfolio-evidence): human decisions, AI assistance, checks, and limitations
+
+## Flagship samples
+- [API reference](https://sriraj-guttapalyam.github.io/technical-writing-portfolio/docs/api-reference): GitHub REST parameters, pagination, nullable fields, and error recovery
+- [Webhook integration](https://sriraj-guttapalyam.github.io/technical-writing-portfolio/docs/webhook-integration): HMAC-SHA256 verification, idempotency, and unit-tested Python
+- [Docs as code](https://sriraj-guttapalyam.github.io/technical-writing-portfolio/docs/docs-as-code): pull-request review, source checks, and Docusaurus build validation
+- [AI documentation case study](https://sriraj-guttapalyam.github.io/technical-writing-portfolio/docs/ai-ready-content): retrieval baseline, metadata, limitations, and human-in-the-loop workflow
 
 ## AI and content strategy
-- [AI-ready content](projects/ai-ready-content/README.md): chunking, metadata, and a hand-run retrieval test
-- [AI workflows](projects/ai-workflows/README.md): human-in-the-loop process, prompts, agent rules, style checklist
-- [Cursor + MadCap Flare workflow](projects/cursor-flare-workflow/README.md): multi-source synthesis from Jira, Confluence, Teams, email, video, and QA into Flare XHTML
-- [Information architecture](projects/doc-architecture/README.md): content model, taxonomy, reuse, governance
+- [AI-ready content](https://sriraj-guttapalyam.github.io/technical-writing-portfolio/docs/ai-ready-content): chunking, metadata, and a hand-run retrieval test
+- [AI workflows](https://sriraj-guttapalyam.github.io/technical-writing-portfolio/docs/ai-workflows): human-in-the-loop process, prompts, agent rules, style checklist
+- [Cursor + MadCap Flare workflow](https://sriraj-guttapalyam.github.io/technical-writing-portfolio/docs/cursor-flare-workflow): multi-source synthesis from Jira, Confluence, Teams, email, video, and QA into Flare XHTML
+- [Information architecture](https://sriraj-guttapalyam.github.io/technical-writing-portfolio/docs/doc-architecture): content model, taxonomy, reuse, governance
 
 ## Developer documentation
-- [API reference](projects/api-reference/README.md)
-- [OpenAPI description](projects/openapi-reference/README.md)
-- [Webhook integration](projects/webhook-integration/README.md)
-- [gRPC architecture](projects/grpc-architecture/README.md)
-- [Docs as code](projects/docs-as-code/README.md)
+- [API reference](https://sriraj-guttapalyam.github.io/technical-writing-portfolio/docs/api-reference)
+- [OpenAPI description](https://sriraj-guttapalyam.github.io/technical-writing-portfolio/docs/openapi-reference)
+- [Webhook integration](https://sriraj-guttapalyam.github.io/technical-writing-portfolio/docs/webhook-integration)
+- [gRPC architecture](https://sriraj-guttapalyam.github.io/technical-writing-portfolio/docs/grpc-architecture)
+- [Docs as code](https://sriraj-guttapalyam.github.io/technical-writing-portfolio/docs/docs-as-code)
 
 ## Procedures, in-app UX, and release communication
-- [In-app guidance](projects/in-app-guidance/README.md): role-targeted onboarding tour, release banner, JSON spec, and guide analytics
-- [RBAC administration](projects/rbac-administration/README.md)
-- [Cloud operations](projects/cloud-user-guide/README.md)
-- [Structured authoring](projects/structured-authoring/README.md)
-- [Hardware setup](projects/hardware-installation/README.md)
-- [Release documentation](projects/release-documentation/README.md)
-- [Release notes](projects/release-notes/README.md)
+- [In-app guidance](https://sriraj-guttapalyam.github.io/technical-writing-portfolio/docs/in-app-guidance): role-targeted onboarding tour, release banner, JSON spec, and guide analytics
+- [RBAC administration](https://sriraj-guttapalyam.github.io/technical-writing-portfolio/docs/rbac-administration)
+- [Cloud operations](https://sriraj-guttapalyam.github.io/technical-writing-portfolio/docs/cloud-user-guide)
+- [Structured authoring](https://sriraj-guttapalyam.github.io/technical-writing-portfolio/docs/structured-authoring)
+- [Hardware setup](https://sriraj-guttapalyam.github.io/technical-writing-portfolio/docs/hardware-installation)
+- [Release documentation](https://sriraj-guttapalyam.github.io/technical-writing-portfolio/docs/release-documentation)
+- [Release notes](https://sriraj-guttapalyam.github.io/technical-writing-portfolio/docs/release-notes)

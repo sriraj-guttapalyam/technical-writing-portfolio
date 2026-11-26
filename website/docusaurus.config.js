@@ -24,7 +24,20 @@ module.exports = {
       onBrokenMarkdownLinks: "warn",
     },
   },
-  themes: ["@docusaurus/theme-mermaid"],
+  themes: [
+    "@docusaurus/theme-mermaid",
+    [
+      require.resolve("@easyops-cn/docusaurus-search-local"),
+      {
+        hashed: true,
+        indexBlog: false,
+        docsDir: "../projects",
+        docsRouteBasePath: "/docs",
+        highlightSearchTermsOnTargetPage: true,
+        searchBarShortcutHint: false,
+      },
+    ],
+  ],
   presets: [
     [
       "classic",
@@ -33,6 +46,7 @@ module.exports = {
         docs: {
           path: "../projects",
           routeBasePath: "docs",
+          showLastUpdateTime: true,
           sidebarPath: "./sidebars.js",
           exclude: [
             "**/dogbench/**",
@@ -61,6 +75,11 @@ module.exports = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      image: "img/social-card.png",
+      metadata: [
+        { name: "author", content: "Sriraj Kumar Reddy Guttapalyam" },
+        { property: "og:type", content: "website" },
+      ],
       colorMode: {
         defaultMode: "light",
         respectPrefersColorScheme: true,
@@ -92,6 +111,11 @@ module.exports = {
             to: "/docs/in-app-guidance",
             label: "More Samples",
             position: "left",
+          },
+          {
+            to: "/about",
+            label: "About & Contact",
+            position: "right",
           },
           {
             href: "https://www.linkedin.com/in/sriraj-guttapalyam",

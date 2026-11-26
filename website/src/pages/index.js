@@ -37,6 +37,41 @@ const TRACKS = [
   },
 ];
 
+const DOMAINS = [
+  {
+    title: "In-App UX, IAM & Cloud Admin",
+    items: [
+      { label: "In-App Onboarding & Release Banners", to: "/docs/in-app-guidance" },
+      { label: "RBAC & Scoped Site Access Admin", to: "/docs/rbac-administration" },
+      { label: "CloudWatch Log Diagnostics", to: "/docs/cloud-user-guide" },
+    ],
+  },
+  {
+    title: "Developer & API Documentation",
+    items: [
+      { label: "OpenAPI 3.x Specification", to: "/docs/openapi-reference" },
+      { label: "Event-Driven gRPC Architecture", to: "/docs/grpc-architecture" },
+      { label: "Python 3.12 Compatibility & Migration", to: "/docs/release-documentation" },
+    ],
+  },
+  {
+    title: "AI Workflows & Structured Authoring",
+    items: [
+      { label: "AI Prompting, Rules & Style Checklist", to: "/docs/ai-workflows" },
+      { label: "Cursor + MadCap Flare Workflow", to: "/docs/cursor-flare-workflow" },
+      { label: "DITA 1.3 Concept, Task & Reference", to: "/docs/structured-authoring" },
+    ],
+  },
+  {
+    title: "Architecture, Releases & Hardware",
+    items: [
+      { label: "Information Architecture & Taxonomy", to: "/docs/doc-architecture" },
+      { label: "Customer-Facing Release Notes", to: "/docs/release-notes" },
+      { label: "Hardware Boot-Media Setup & Safety", to: "/docs/hardware-installation" },
+    ],
+  },
+];
+
 export default function Home() {
   return (
     <Layout
@@ -60,12 +95,20 @@ export default function Home() {
             >
               Review AI Use and Guardrails
             </Link>
+            <Link
+              className="button button--secondary button--lg"
+              to="/docs/portfolio-evidence"
+            >
+              Authorship &amp; Validation
+            </Link>
           </div>
           <div className="heroPills">
             <span>REST APIs &amp; OpenAPI</span>
             <span>Secure Webhook Integration</span>
             <span>GitHub Docs-as-Code &amp; CI</span>
             <span>AI Documentation Guardrails</span>
+            <span>DITA 1.3 &amp; MadCap Flare</span>
+            <span>In-App UX &amp; RBAC</span>
           </div>
         </div>
       </header>
@@ -87,6 +130,27 @@ export default function Home() {
                 <Link className="cardLink" to={item.primaryTo}>
                   {item.primaryLabel}
                 </Link>
+              </div>
+            ))}
+          </div>
+
+          <div className="sectionHeader domainSectionHeader">
+            <h2>Explore All Portfolio Samples by Domain</h2>
+            <p>
+              Additional writing samples covering enterprise SaaS administration, in-app UX guidance, OpenAPI and gRPC specifications, DITA/XML, MadCap Flare with Cursor, information architecture, release communication, and hardware safety procedures.
+            </p>
+          </div>
+          <div className="domainGrid">
+            {DOMAINS.map((domain) => (
+              <div key={domain.title} className="domainCard">
+                <h3>{domain.title}</h3>
+                <ul>
+                  {domain.items.map((link) => (
+                    <li key={link.to}>
+                      <Link to={link.to}>{link.label}</Link>
+                    </li>
+                  ))}
+                </ul>
               </div>
             ))}
           </div>

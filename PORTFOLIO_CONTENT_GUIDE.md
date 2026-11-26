@@ -48,6 +48,6 @@ The style follows the [Microsoft Writing Style Guide](https://learn.microsoft.co
 - Local Markdown links resolve, headings are well formed, and code fences close.
 - Python and XML examples parse.
 - DITA references and keys resolve, and the excerpts in the READMEs match the source files.
-- The migration and webhook verification unit tests pass.
+- The migration, webhook verification, and in-app guidance unit tests pass.
 
 The checks do not test live systems, external URLs, DITA schema validity, or the printed PDF. Commands in the procedures are taken from the cited vendor references and have not been run against a customer environment. A technical reviewer would verify them in the target environment before publication.
